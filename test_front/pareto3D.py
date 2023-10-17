@@ -78,4 +78,4 @@ print(points_dominants_array)
 
 
 
-plt.show()
+#plt.show()
