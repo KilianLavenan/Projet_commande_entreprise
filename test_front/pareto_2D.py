@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from Radar import *
 
 # Fonction qui trouve les indices (dans le tableau de points) des points appartenants au front de pareto 
 def front_de_pareto(points):
@@ -42,4 +43,7 @@ plt.title("Graphique de l'ensemble de points et de leur front de Pareto")
 plt.plot(x_pareto, y_pareto, color='g') # Traçage du front de pareto
 plt.xlabel('Axe x')
 plt.ylabel('Axe y')
-plt.show()
+
+print(front_pareto)
+vue_radar(front_pareto)
+#plt.show()

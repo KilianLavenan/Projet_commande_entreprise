@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from Radar import *
+
 # Fonction qui obtient les points de Pareto
 def pareto_simple(Points):
     # Crée un ensemble pour stocker les points de Pareto
@@ -73,9 +75,6 @@ plt.title('Front de Pareto')
 ax.scatter(points_dominants_array[:,0], points_dominants_array[:,1], points_dominants_array[:,2], color='red')
 ax.scatter(points_de_pareto_array[:,0], points_de_pareto_array[:,1], points_de_pareto_array[:,2], color='green')
 
-print(points_dominants_array)
 
-
-
-
-#plt.show()
+vue_radar(points_de_pareto)
+plt.show()
