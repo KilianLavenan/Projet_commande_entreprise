@@ -3,6 +3,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 import pygal
+import random
 # may need to install CairoSVG with pygal
 
 def to_liste1(pareto):
@@ -15,9 +16,16 @@ def to_liste2(pareto):
         pareto[i]=list(pareto[i])
     return pareto
 
+def genereate_random_points(num_points,dimension):
+    points=[]
+    for _ in range(num_points):
+        point = [random.randint(20,80) for _ in range(dimension)]
+        points.append(point)
+    return points
+
+
 def vue_radar(pareto):
     pareto=to_liste2(pareto)
-    print(pareto)
     # data
     categories = [f"Critère {i}" for i in range(1,len(pareto[0])+1)]
     categories.append("Critère 1")
@@ -43,3 +51,5 @@ def vue_radar(pareto):
         ax.legend(labels=[f"Point{(i-2)*5+j+1}" for j in range(len(sublist))],loc='lower right',fontsize=5)
     fig.suptitle('Compare pareto front Point', fontsize= 22)
     plt.show()
+
+vue_radar(genereate_random_points(23,7))
